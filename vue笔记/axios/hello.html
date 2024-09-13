@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="ch">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Axios使用</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <script>
+      axios.get('http://localhost:8081/hello').then(res => {
+        console.log(res.data)
+      })
+    </script>
+  </body>
+</html>

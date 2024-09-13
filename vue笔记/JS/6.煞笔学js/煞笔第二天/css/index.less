@@ -1,0 +1,97 @@
+@import url(./mixins/clear.less);
+
+// 装了easy less之后新建less文件后保存之后会生成对应的css文件
+#wrapper {
+  #header {
+    .headTop {
+      background: #eaeaea;
+      height: 30px;
+      .headTopMain {
+        width: 1200px;
+        // 1. 居中的常用方法
+        margin: 0 auto;
+        // 2. 为了让文字垂直居中，可以让文本的高度等于headTop的高度
+        line-height: 30px;
+        // 5. 子元素开启了浮动 父元素高度塌陷问题 解决塌陷问题
+        .clearfix();
+        .left {
+          float: left;
+          h5 {
+            // 3. 为了让欢迎和登录注册在同一行  需要加浮动
+            float: left;
+            // 间隔5像素
+            margin-right: 5px;
+          }
+          p {
+            float: left;
+            a {
+              // 4. 引用当前元素的找到第一个孩子
+              &:first-child {
+                border-right: 1px solid #b3aeae;
+                margin-right: 0px;
+                padding-right: 5px;
+              }
+            }
+          }
+        }
+        .right {
+          float: right;
+          nav {
+            // 7 去除行内元素的默认间距 可以设置font-size为0 并将其后重置为所需大小，
+            // 这种方式可以去除行内元素之间的默认间距
+            font-size: 0px;
+            a {
+              margin-left: 10px;
+              // 6. padding的话在次外层  在margin在的情况下不会挨着元素内容 解决竖线挨着的问题
+              padding-right: 10px;
+              border-right: 1px solid #b3aeae;
+              font-size: 12px;
+              // 选中作为a元素最后一个的元素
+              &:last-child {
+                border: none;
+                margin-left: 10px;
+                padding-left: 0px;
+              }
+            }
+          }
+        }
+      }
+      // 头部下半部分
+      .headBottom {
+        // 左边logo部分
+        h1 {
+          font-size: 0;
+          img {
+            width: 175px;
+            height: 56px;
+            margin: 25px 45px;
+          }
+        }
+        // 右边搜索部分
+        .search {
+          margin-top: 35px;
+          input {
+            &:first-child {
+              box-sizing: border-box;
+              width: 490px;
+              height: 32px;
+              padding: 0 4px;
+              border: 3px solid #ea4a36;
+              // 修饰placeholder的颜色
+              &[placeholder] {
+                color: yellowgreen;
+              }
+            }
+            &:last-child {
+              width: 68px;
+              height: 32px;
+              color: #fff;
+              background-color: #ea4a36;
+              border: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+#menu-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-align: right;
+}
+
+#menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: none;
+}
+
+#menu li {
+  background: #ddd;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-top: -1px; /* To create a single border effect */
+}
+
+#rope {
+  width: 2px;
+  height: 50px;
+  background: #000;
+  margin: 0 auto;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition: top 0.3s;
+}

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>待办事项</title>
+  </head>
+  <body>
+    <h1>Todo List</h1>
+    <input type="text" id="todoInput" placeholder="新增待办事项" />
+    <button onclick="addTodo()">添加</button>
+    <ul id="todoList"></ul>
+
+    <!--在 <script> 标签中引入，那么文件中定义的变量和函数将具有全局作用域，
+      可以在整个 HTML 页面中的 JavaScript 代码中访问-->
+    <!--如果引入的多个js文件中含有相同的变量，那么后引入的会覆盖先引入的变量-->
+    <script src="todo.js"></script>
+  </body>
+</html>

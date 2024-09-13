@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        /* 清除默认样式的影响  以免布局不准确*/
+        margin: 0;
+        padding: 0;
+      }
+      .leftfix {
+        /* 写一个左浮动的样式 */
+        float: left;
+      }
+      .rightfix {
+        /* 写一个左浮动的样式 */
+        float: right;
+      }
+      /* 消除浮动影响  在clearfix后面加元素  伪元素选择器 */
+      .clearfix::after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+      .container {
+        width: 960px;
+        /* 居中 */
+        margin: 0 auto;
+        /*文本的水平居中*/
+        text-align: center;
+      }
+      .logo {
+        width: 200px;
+      }
+      .banner {
+        width: 540px;
+        margin: 0 10px;
+      }
+      .banner2 {
+        width: 200px;
+      }
+
+      /* 写个并集选择器，写公共属性 */
+      .logo,
+      .banner,
+      .banner2 {
+        height: 80px;
+        background-color: #ccc;
+        /* 为了垂直居中设置行高 */
+        line-height: 80px;
+      }
+
+      .menu {
+        height: 30px;
+        background-color: #ccc;
+        margin-top: 10px;
+        line-height: 30px;
+      }
+
+      .item1,
+      .item2 {
+        width: 368px;
+        height: 198px;
+        line-height: 198px;
+        border: 1px solid black;
+        margin-right: 10px;
+      }
+      .content {
+        margin-top: 10px;
+      }
+      .item3,
+      .item4,
+      .item5,
+      .item6 {
+        width: 178px;
+        height: 198px;
+        line-height: 198px;
+        border: 1px solid black;
+        margin-right: 10px;
+      }
+      .bottom {
+        margin-top: 10px;
+      }
+      .item7,
+      .item8,
+      .item9 {
+        width: 198px;
+        height: 128px;
+        line-height: 128px;
+        border: 1px solid black;
+      }
+      .item8 {
+        margin: 10px 0;
+      }
+      .footer {
+        height: 60px;
+        background-color: #ccc;
+        margin-top: 10px;
+        line-height: 60px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- head 立马加消除浮动 -->
+      <div class="page-header clearfix">
+        <!-- 三个都在一行，所以都得浮动，父元素得清除浮动的影响 -->
+        <div class="logo leftfix">logo</div>
+        <div class="banner leftfix">banner</div>
+        <div class="banner2 leftfix">banner2</div>
+      </div>
+      <!-- 菜单 -->
+      <div class="menu">菜单</div>
+      <!-- 内容区 -->
+      <div class="content clearfix">
+        <!-- 左侧 -->
+        <div class="left leftfix">
+          <!-- 上 -->
+          <div class="top clearfix">
+            <div class="item1 leftfix">栏目一</div>
+            <div class="item2 leftfix">栏目二</div>
+          </div>
+          <!-- 下 -->
+          <div class="bottom clearfix">
+            <div class="item3 leftfix">栏目三</div>
+            <div class="item4 leftfix">栏目四</div>
+            <div class="item5 leftfix">栏目五</div>
+            <div class="item6 leftfix">栏目六</div>
+          </div>
+        </div>
+        <!-- 右侧 -->
+        <div class="right rightfix">
+          <div class="item7">栏目七</div>
+          <div class="item8">栏目八</div>
+          <div class="item9">栏目九</div>
+        </div>
+      </div>
+      <!-- 页脚 -->
+      <div class="footer">页脚</div>
+    </div>
+  </body>
+</html>

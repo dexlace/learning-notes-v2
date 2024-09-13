@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <title>06_属性选择器</title>
+    <style>
+      /* 第一种写法：选中具有title属性的元素 */
+      /* [title] {
+            color: red;
+        } */
+
+      /* 第二种写法：选中具有title属性，且属性值为nanjing1的元素 */
+      [title='nanjing1'] {
+        color: red;
+      }
+
+      /* 第三种写法：选中具有title属性，且属性值以字母a开头的元素 */
+      [title^='a'] {
+        color: green;
+      }
+
+      /* 第四种写法：选中具有title属性，且属性值以字母u结尾的元素 */
+      [title$='u'] {
+        color: blue;
+      }
+
+      /* 第五种写法：选中具有title属性，且属性值包含字母x的元素 */
+      [title*='x'] {
+        color: pink;
+      }
+    </style>
+  </head>
+  <body>
+    <div title="nanjing1">南京1</div>
+    <div title="abcd">abcd</div>
+    <div title="tu">tu</div>
+    <div title="xt" class="school">xxx</div>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CSS_三大特性</title>
+    <link rel="stylesheet" href="./index.css" />
+    <style>
+      h2 {
+        color: green;
+      }
+      div {
+        color: red;
+        font-size: 40px;
+        background-color: gray;
+      }
+      p {
+        color: purple;
+        background-color: inherit;
+      }
+      * {
+        color: blue;
+      }
+      /* div {} */
+      /* p {} */
+      /* span {} */
+    </style>
+  </head>
+  <body>
+    <h2 id="nanjing">南京</h2>
+    <hr />
+    <div>
+      我是div中的文字,我是红色的应该没问题，我用的是div的样式红色
+      <hr />
+      <span
+        >我是span中的文字1,我虽然继承了div,但是继承的比通配的还弱，所以我的颜色是蓝色的</span
+      >
+      <hr />
+      <p>
+        <span
+          >我是span中的文字2，虽然继承了p，但是继承的比通配的还弱，所以我也是蓝色的不是紫色的</span
+        >
+      </p>
+    </div>
+  </body>
+</html>

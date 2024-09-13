@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <title>22_布局技巧1</title>
+    <!--块元素的水平居中在父元素中加margin: 0 auto;-->
+    <!--块元素的shuzhi居中 计算margin-top 并针对塌陷问题设置父元素overflow: hidden;;-->
+    <style>
+      .outer {
+        width: 400px;
+        height: 400px;
+        background-color: gray;
+        overflow: hidden;
+      }
+      .inner {
+        width: 200px;
+        height: 100px;
+        background-color: orange;
+        margin: 0 auto;
+        margin-top: 150px;
+        text-align: center;
+        line-height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="outer">
+      <div class="inner">inner</div>
+    </div>
+  </body>
+</html>
