@@ -21,7 +21,7 @@ import java.util.concurrent.CountDownLatch;
 public class MyZkConnect {
 
     //集群节点
-    public static final String zkServerClusterConnect = "192.168.205.100:2181,192.168.205.101:2181,192.168.205.102:2181";
+    public static final String zkServerClusterConnect = "xtyw:2181,xtyw:2182,xtyw:2183";
 
     //单一节点
     public static final String zkServerSingleConnect = "127.0.0.1:2181";
@@ -70,7 +70,7 @@ public class MyZkConnect {
     public static ZooKeeper connect() throws IOException, InterruptedException{
         CountDownLatch cdl = new CountDownLatch(1);
         log.info("准备建立zk服务");
-        ZooKeeper zk = new ZooKeeper(zkServerSingleConnect, timeout, new MyZkWatcher(cdl,"建立连接"));
+        ZooKeeper zk = new ZooKeeper(zkServerClusterConnect, timeout, new MyZkWatcher(cdl,"建立连接"));
         log.info("完成建立zk服务");
         cdl.await();//这里为了等待wather监听事件结束
         return zk;
